@@ -5,7 +5,7 @@
  */
 package projectworkana;
 
-import view.LoginView;
+import view.*;
 
 import model.AdministradorModel;
 
@@ -90,7 +90,7 @@ public class ProjectWorkana extends JFrame {
     }
     
     public static void main(String[] args) {
-        //new ProjectWorkana().setVisible(true);
+        
         new LoginView().setVisible(true);
     }
     

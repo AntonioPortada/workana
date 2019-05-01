@@ -5,11 +5,10 @@
  */
 package view;
 
-import projectworkana.ProjectWorkana;
+import view.LoginView;
 
 import javax.swing.JMenu;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
@@ -17,9 +16,7 @@ import javax.swing.JMenuItem;
  *
  * @author Antonio-PC
  */
-public class index extends JFrame {
-    
-    private JPanel panel = new JPanel();
+public abstract class index extends JFrame {
     
     public index(){
         JMenuBar bar = new JMenuBar();
@@ -36,8 +33,11 @@ public class index extends JFrame {
             System.exit(0);
         });
         itemLogout.addActionListener(event -> {
-            new ProjectWorkana().setVisible(true);
-            System.exit(0);
+            new LoginView().setVisible(true);
+            dispose();
+        });
+        itemProfile.addActionListener(event -> {
+            
         });
     }
 }

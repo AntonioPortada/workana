@@ -5,11 +5,7 @@
  */
 package view;
 
-import controller.AdministradorController;
-
 import model.AdministradorModel;
-
-import view.LoginView;
 
 import javax.swing.JOptionPane;
 
@@ -143,7 +139,21 @@ public class LoginView extends javax.swing.JFrame {
         AdministradorModel ac = new AdministradorModel();
         
         if(txtUser.getText().equals(ac.getUser()) && txtPass.getText().equals(ac.getPass())){
-            new inndexView().setVisible(true);
+            int opc = boxNivel.getSelectedIndex();
+            
+            switch (opc){
+                case 0:
+                    new AdministradorView().setVisible(true);
+                    break;
+                    
+                case 1:
+                    new MaestroView().setVisible(true);
+                    break;
+                    
+                case 2:
+                    new AlumnoView().setVisible(true);
+                    break;
+            }
             dispose();
         }
         else
