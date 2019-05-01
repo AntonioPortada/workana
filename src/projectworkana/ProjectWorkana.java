@@ -5,16 +5,15 @@
  */
 package projectworkana;
 
+import view.LoginView;
+
 import model.AdministradorModel;
 
-import javax.swing.JMenu;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.JMenuBar;
 import javax.swing.JComboBox;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -32,7 +31,7 @@ public class ProjectWorkana extends JFrame {
     private JPasswordField txtPass;
     private JComboBox boxNivel;
 
-    public ProjectWorkana(){
+    /*public ProjectWorkana(){
         super("Proyecto");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(10,10,600,400);
@@ -64,8 +63,9 @@ public class ProjectWorkana extends JFrame {
             AdministradorModel a = new AdministradorModel();
             
             if(txtUser.getText().equals(a.getUser()) && txtPass.getText().equals(a.getPass())){
-                panel.setVisible(false);
-                bar();
+                index index = new index();
+                index.setVisible(true);
+                System.exit(0);
             }
             else
                 JOptionPane.showMessageDialog(null, "Datos incorrectos");
@@ -78,26 +78,7 @@ public class ProjectWorkana extends JFrame {
         boxNivel.addItem("Docente");
         boxNivel.addItem("Alumno");
         panel.add(boxNivel);
-    }
-    
-    private void bar(){
-        JMenuBar bar = new JMenuBar();
-        JMenu menuOptions = new JMenu("Opciones");
-        JMenuItem itemProfile = new JMenuItem("Perfil");
-        JMenuItem itemLogout = new JMenuItem("Logout");
-        JMenuItem itemExit = new JMenuItem("Exit");
-        menuOptions.add(itemProfile);
-        menuOptions.add(itemLogout);
-        menuOptions.add(itemExit);
-        bar.add(menuOptions);
-        setJMenuBar(bar);
-        itemExit.addActionListener(event -> {
-            System.exit(0);
-        });
-        itemLogout.addActionListener(event -> {
-            panel.setVisible(true);
-        });
-    }
+    }*/
     
     private int getNivel(){
         if(boxNivel.getSelectedItem().toString().equals("Administrador"))
@@ -109,7 +90,8 @@ public class ProjectWorkana extends JFrame {
     }
     
     public static void main(String[] args) {
-        new ProjectWorkana().setVisible(true);
+        //new ProjectWorkana().setVisible(true);
+        new LoginView().setVisible(true);
     }
     
 }
